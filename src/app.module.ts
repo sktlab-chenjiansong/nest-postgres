@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/user.module';
 import { Connection } from 'typeorm';
-import { PersonModule } from './person/person.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
@@ -15,7 +14,7 @@ import { PersonModule } from './person/person.module';
     database: 'postgres',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
     synchronize: true,
-  }), UsersModule, PersonModule],
+  }), UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
